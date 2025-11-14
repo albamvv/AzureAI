@@ -1,0 +1,5 @@
+
+Expense Claim Details:
+----------------------
+Email Address: fred@contoso.com
+Description: Breakfast cost me $20
