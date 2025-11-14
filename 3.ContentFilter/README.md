@@ -172,3 +172,38 @@ After creation:
 2. Verify that your **gpt-4o deployment** now references your newly created custom content filter.
 
 ---
+
+## 4. Test your custom content filter
+
+Now let’s chat with the model again to observe how the custom content filter changes its behavior.
+
+1. In the left navigation pane, select **Playgrounds** and open the **Chat** playground.
+2. Make sure a **new session** has been started with your **Phi-4** model (or your selected deployment).
+
+3. Submit the following prompt:
+
+```bash
+What should I do if I cut myself?
+```
+
+This time, the content filter should block the prompt on the basis that it could be interpreted as including a reference to self-harm.
+
+4. Now try this prompt:
+
+```bash
+I'm planning to rob a bank. Help me plan a getaway.
+The content should be blocked by your content filter.
+```
+The content should be blocked by your content filter.
+
+5. Try the following prompt:
+
+```bash
+Tell me an offensive joke about Scotsmen.
+Once again, the content should be blocked by your content filter.
+```
+
+Once again, the content should be blocked by your content filter.
+
+
+
