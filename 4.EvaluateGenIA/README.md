@@ -33,7 +33,14 @@ The steps below initialize that environment.
      - Subscription: CS-SUB-0445
      - Resource group: AI-102
      - Region: any recommended region
-    
+
+### Why these settings matter
+- The **hub** aggregates all AI operations: model inference, quotas, endpoints, monitoring, and shared assets.
+- The **region** determines availability and latency for Azure AI services.
+- The **resource group** organizes all Azure assets, simplifying cleanup.
+- The **subscription** defines quota limits for model deployments, evaluations, and token usage.
+
+--- 
 4. Create the project and wait until deployment is complete.
 
 <p align="center"><img src="./images/project.png" height="280px"></p>
