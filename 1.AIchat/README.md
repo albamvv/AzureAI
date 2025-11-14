@@ -87,27 +87,23 @@ azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 api_version = os.getenv("OPENAI_API_VERSION")
 ```
 
----
-
-## 4. variables de entorno
-
 1. MODEL_DEPLOYMENT
 
-![MODEL_DEPLOYMENT](./images/MODEL_DEPLOYMENT.png)
+<p align="left"><img src="./images/MODEL_DEPLOYMENT.png" height="300px"></p> 
 
 2. OPENAI_API_VERSION
 
-![OPENAI_API_VERSION](./images/OPENAI_API_VERSION.png)
+<p align="left"><img src="./images/OPENAI_API_VERSION.png" height="300px"></p> 
 
-## RESOURCE DATA
+> **Note:** RESOURCE DATA
 
 3. AZURE_OPENAI_KEY
 
-![AZURE_OPENAI_KEY](./images/AZURE_OPENAI_KEY.png)
+<p align="left"><img src="./images/AZURE_OPENAI_KEY.png" height="300px"></p> 
 
 4. AZURE_OPENAI_ENDPOINT
 
-![AZURE_OPENAI_ENDPOINT](./images/AZURE_OPENAI_ENDPOINT.png)
+<p align="left"><img src="./images/AZURE_OPENAI_ENDPOINT.png" height="300px"></p> 
 
 
 
