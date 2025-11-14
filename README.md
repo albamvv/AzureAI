@@ -27,7 +27,9 @@ Before you start, ensure you have:
 - Access to **Azure AI Foundry** and **Azure Portal**
 - Basic familiarity with **Python** and **Azure Cloud Shell**
 - **Git** and **PowerShell** (if running locally)
-
+- Access to Azure AI Foundry: https://ai.azure.com
+- Credentials provided by the instructor
+- Permissions to create hubs, projects, and model deployments
 
 ##  Set Up the Environment
 

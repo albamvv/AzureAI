@@ -3,15 +3,10 @@
 
 This exercise guides you through manually and automatically evaluating the performance of generative AI models in Azure AI Foundry using gpt-4o and gpt-4o-mini.
 
-## Prerequisites
-- Access to Azure AI Foundry: https://ai.azure.com
-- Credentials provided by the instructor
-- Permissions to create hubs, projects, and model deployments
 
 ## 1. Create an Azure AI Foundry Hub and Project
 
-In Azure AI Foundry, every project must belong to an AI Hub.  
-An AI Hub acts as a central control plane that manages:
+In Azure AI Foundry, every project must belong to an AI Hub. An AI Hub acts as a central control plane that manages:
 - model deployments  
 - datasets  
 - evaluation jobs  
@@ -22,20 +17,15 @@ The steps below initialize that environment.
 
 ---
 
-1. Go to https://ai.azure.com and sign in with the provided credentials.
-2. Close any initial help or quick start panes.
-3. Navigate to Management Center → All resources and select “Create new → AI hub”.
+1. Go to https://ai.azure.com and sign in with the provided credentials. Close any initial help or quick start panes.
+2. Navigate to Management Center → All resources and select “Create new → AI hub”.
     - https://ai.azure.com/managementCenter/allResources
 
-    <p align="center">
-      <img src="./images/management_center.png" height="280px">
-    </p>
+    <p align="center"><img src="./images/management_center.png" height="280px"></p>
     
-4. In the creation wizard:
+3. In the creation wizard:
 
-    <p align="center">
-      <img src="./images/crear_projecto_hub.png" height="280px">
-    </p>
+    <p align="center"><img src="./images/crear_projecto_hub.png" height="280px"></p>
 
    - Enter a valid project name.
    - Select “Create a new hub” and rename it.
@@ -43,12 +33,10 @@ The steps below initialize that environment.
      - Subscription: CS-SUB-0445
      - Resource group: AI-102
      - Region: any recommended region
-
-    <p align="center">
-      <img src="./images/project.png" height="280px">
-    </p>
     
-5. Create the project and wait until deployment is complete.
+4. Create the project and wait until deployment is complete.
+
+<p align="center"><img src="./images/project.png" height="280px"></p>
 
 ## 2. Deploy the Models
 
