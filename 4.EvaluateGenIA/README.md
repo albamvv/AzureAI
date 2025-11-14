@@ -21,7 +21,7 @@ The steps below initialize that environment.
 2. Navigate to Management Center → All resources and select “Create new → AI hub”.
     - https://ai.azure.com/managementCenter/allResources
 
-    <p align="center"><img src="./images/management_center.png" height="280px"></p>
+    <p align="left"><img src="./images/management_center.png" height="280px"></p>
     
 3. In the creation wizard:
 
@@ -34,7 +34,7 @@ The steps below initialize that environment.
      - Resource group: AI-102
      - Region: any recommended region
 
-    <p align="right"><img src="./images/crear_projecto_hub.png" height="280px"></p>
+    <p align="left"><img src="./images/crear_projecto_hub.png" height="280px"></p>
 
     - In this screen, you are creating a new Azure AI Foundry project, which serves as the workspace where models, datasets, evaluations, and AI workflows will live.
     - Azure automatically creates (or lets you rename) an AI Hub, which acts as the central control plane for:
@@ -46,7 +46,7 @@ The steps below initialize that environment.
 
 4. Create the project and wait until deployment is complete.
 
-<p align="center"><img src="./images/project.png" height="280px"></p>
+<p align="left"><img src="./images/project.png" height="280px"></p>
 
 - API Key: an API key associated with your Azure OpenAI resource is displayed. This:
     - authenticates calls to deployed models
@@ -94,7 +94,8 @@ The next steps (according to the lab instructions) will involve:
 
 ### Deploy gpt-4o
 1. In the project, go to My assets → Models + endpoints.
-<p align="right"><img src="./images/models_endpoints.png" height="280px"></p>
+<p align="left"><img src="./images/models_endpoints.png" height="280px"></p>
+
 2. Select “+ Deploy model → Deploy base model”.
 3. Search for and select gpt-4o.
 4. Configure:
