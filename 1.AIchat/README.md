@@ -49,11 +49,19 @@ This project acts as the workspace where the model deployment, agent configurati
 
 > **Note:**  Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 5,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
 
-<p align="left"><img src="./images/gpt-4o_model.png" height="380px"></p> 
+<p align="left"><img src="./images/gpt-4o_model.png" height="300px"></p> 
 
 5. When your project is created, the chat playground will be opened automatically so you can test your model:
+
+<p align="left"><img src="./images/gpt-4o_chatplayground.png" height="380px"></p> 
+
 6. In the Setup pane, note the name of your model deployment; which should be gpt-4o. You can confirm this by viewing the deployment in the Models and endpoints page (just open that page in the navigation pane on the left).
+
+<p align="left"><img src="./images/model_endpoints.png" height="380px"></p> 
+
 7. In the navigation pane on the left, select Overview to see the main page for your project; which looks like this:
+
+<p align="left"><img src="./images/overview.png" height="380px"></p> 
 
 ## 2. Create a client application to chat with the model
 
