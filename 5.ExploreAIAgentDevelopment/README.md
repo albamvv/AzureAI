@@ -13,7 +13,7 @@ This project demonstrates how to build, configure, and test an AI Agent using th
 1. Open https://ai.azure.com and sign in 
 2. On the home page, select **Create an agent**.
 
-<p align="left"><img src="./images/create_agent.png" height="280px"></p>
+<p align="left"><img src="./images/create_agent.png" height="200px"></p>
 
 3. Enter a valid project name.
 4. Expand **Advanced options** and configure:
@@ -22,7 +22,7 @@ This project demonstrates how to build, configure, and test an AI Agent using th
    - **Resource group:** `AI-102`
    - **Region:** any recommended region  
 
-<p align="left"><img src="./images/crear_proyecto.png" height="280px"></p>
+<p align="left"><img src="./images/crear_proyecto.png" height="350px"></p>
 
 5. Select **Create**.
 
