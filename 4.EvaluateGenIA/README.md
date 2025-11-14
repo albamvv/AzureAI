@@ -22,20 +22,10 @@ The steps below initialize that environment.
     - https://ai.azure.com/managementCenter/allResources
 
     <p align="center"><img src="./images/management_center.png" height="280px"></p>
-
-    Note: 
-    - in this screen, you are creating a new Azure AI Foundry project, which serves as the workspace where models, datasets, evaluations, and AI workflows will live.
-    - Azure automatically creates (or lets you rename) an AI Hub, which acts as the central control plane for:
-        - organizing AI resources
-        - securely storing connections
-        - providing shared infrastructure for models and evaluations
-        - enabling collaboration within the workspace
-        - This is required because every Azure AI Foundry project must be attached to a hub.
-
     
 3. In the creation wizard:
 
-    <p align="center"><img src="./images/crear_projecto_hub.png" height="280px"></p>
+    
 
    - Enter a valid project name.
    - Select “Create a new hub” and rename it.
@@ -44,9 +34,26 @@ The steps below initialize that environment.
      - Resource group: AI-102
      - Region: any recommended region
 
+    <p align="right"><img src="./images/crear_projecto_hub.png" height="280px"></p>
+
+    - In this screen, you are creating a new Azure AI Foundry project, which serves as the workspace where models, datasets, evaluations, and AI workflows will live.
+    - Azure automatically creates (or lets you rename) an AI Hub, which acts as the central control plane for:
+        - organizing AI resources
+        - securely storing connections
+        - providing shared infrastructure for models and evaluations
+        - enabling collaboration within the workspace
+        - This is required because every Azure AI Foundry project must be attached to a hub.
+
 4. Create the project and wait until deployment is complete.
 
 <p align="center"><img src="./images/project.png" height="280px"></p>
+
+- API Key: an API key associated with your Azure OpenAI resource is displayed. This:
+    - authenticates calls to deployed models
+    - is used for programmatic access from notebooks, scripts, or applications
+
+- Azure OpenAI Endpoint: this endpoint is required for:
+    - model deployment, inference calls, automated evaluations, integration into pipelines
 
 ### Why these settings matter
 - The **hub** aggregates all AI operations: model inference, quotas, endpoints, monitoring, and shared assets.
@@ -54,12 +61,40 @@ The steps below initialize that environment.
 - The **resource group** organizes all Azure assets, simplifying cleanup.
 - The **subscription** defines quota limits for model deployments, evaluations, and token usage.
 
+### Conclusion
+
+Across these steps, you have completed the entire environment setup required to work with Azure AI Foundry. Specifically, you have:
+
+1. Provisioned a full AI workspace
+- Project
+- AI Hub
+- Azure AI/OpenAI resource. This establishes the foundational infrastructure for hosting and serving generative AI models.
+
+2. Configured the operational context
+By specifying subscription, resource group, and region, you ensured that all components are deployed in a consistent, controlled environment.
+
+3. Gained access to operational endpoints
+The API key and endpoint shown in the last screen allow you to:
+- deploy models
+- run inference
+- connect external tools or applications
+- perform evaluations
+
+4. Reached the point where model operations can begin
+The next steps (according to the lab instructions) will involve:
+
+- deploying gpt-4o and gpt-4o-mini
+- performing manual evaluation
+- running automated evaluation pipelines
+- analyzing metrics such as semantic similarity, relevance, F1 score, and content safety
+
 --- 
 
 ## 2. Deploy the Models
 
 ### Deploy gpt-4o
 1. In the project, go to My assets → Models + endpoints.
+<p align="right"><img src="./images/models_endpoints.png" height="280px"></p>
 2. Select “+ Deploy model → Deploy base model”.
 3. Search for and select gpt-4o.
 4. Configure:
