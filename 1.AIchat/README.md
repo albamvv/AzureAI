@@ -20,7 +20,7 @@ Let's start by deploying a model in an Azure AI Foundry project.
 2. In the home page, in the Explore models and capabilities section, search for the **gpt-4o model**; which we'll use in our project.
 3. In the search results, select the gpt-4o model to see its details, and then at the top of the page for the model, select Use this model. When prompted to create a project, enter a valid name for your project and expand Advanced options. Select Create and wait for your project to be created.
 
-<p align="left"><img src="./images/gpt-4o_model.png" height="280px"></p> 
+<p align="left"><img src="./images/find_gpt-4o_model.png" height="240px"></p> 
 
 
 After selecting **Customize**, specify the following settings for your project:
@@ -37,17 +37,19 @@ After selecting **Customize**, specify the following settings for your project:
 > **Note:** Some Azure AI resources are limited by regional model quotas.  
 > If you encounter quota limitations later in the exercise, you may need to create the resource again in a different region.
 
-<p align="left"><img src="./images/create_project.png" height="280px"></p> 
+<p align="left"><img src="./images/create_project.png" height="380px"></p> 
 
 4. If prompted, deploy the gpt-4o model using the Standard deployment type and customize the deployment details to set a Tokens per minute rate limit of 5K.
  
-<p align="left"><img src="./images/deploy_gpt4.png" height="280px"></p> 
+<p align="left"><img src="./images/deploy_gpt4.png" height="380px"></p> 
  
 > **Note:** Why Azure prompts to create a project when deploying a model--> Azure AI Foundry requires a project to manage model deployments, resources, and configurations. 
 If no project exists when you select **Use this model**, Azure automatically asks you to create one. 
 This project acts as the workspace where the model deployment, agent configuration, and related assets will be stored.
 
 > **Note:**  Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 5,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
+
+<p align="left"><img src="./images/gpt-4o_model.png" height="380px"></p> 
 
 5. When your project is created, the chat playground will be opened automatically so you can test your model:
 6. In the Setup pane, note the name of your model deployment; which should be gpt-4o. You can confirm this by viewing the deployment in the Models and endpoints page (just open that page in the navigation pane on the left).
