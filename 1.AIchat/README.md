@@ -13,32 +13,40 @@ In this exercise, you will:
 3. Build a **Python chat client** using the **Azure AI Foundry** and **Azure OpenAI SDKs**.  
 4. Interact with your model through a command-line chat interface.  
 
-## Activar entorno
+## 1. Deploy a model in an Azure AI Foundry project
+Let's start by deploying a model in an Azure AI Foundry project.
 
-```bash
-source labenv/Scripts/activate
-```
+1. Open a web browser and navigate to the Azure AI Foundry portal at https://ai.azure.com and sign in
+2. In the home page, in the Explore models and capabilities section, search for the **gpt-4o model**; which we'll use in our project.
+3. In the search results, select the gpt-4o model to see its details, and then at the top of the page for the model, select Use this model. When prompted to create a project, enter a valid name for your project and expand Advanced options.
 
-## ⚙️ Prerequisites
-
-Before you start, ensure you have:
-
-- An active **Azure subscription** (`CS-SUB-0417` or equivalent)
-- Access to **Azure AI Foundry** and **Azure Portal**
-- Basic familiarity with **Python** and **Azure Cloud Shell**
-- **Git** and **PowerShell** (if running locally)
+<p align="left"><img src="./images/gpt-4o_model.png" height="380px"></p> 
 
 
-##  Set Up the Environment
 
-Create a virtual environment and install dependencies:
+After selecting **Customize**, specify the following settings for your project:
 
-```bash
-python -m venv labenv
-.\labenv\Scripts\activate
-pip install azure-identity azure-ai-projects openai
-```
+- **Azure AI Foundry resource:**  
+  Provide a valid name for your Azure AI Foundry resource.
+- **Subscription:**  
+  `CS-SUB-0445`
+- **Resource group:**  
+  Create or select an existing resource group.
+- **Region:**  
+  Select any *AI Foundry recommended* region.
 
+> **Note:** Some Azure AI resources are limited by regional model quotas.  
+> If you encounter quota limitations later in the exercise, you may need to create the resource again in a different region.
+
+4. Select Create and wait for your project to be created. If prompted, deploy the gpt-4o model using the Standard deployment type and customize the deployment details to set a Tokens per minute rate limit of 5K.
+
+> **Note:**  Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 5,000 TPM should be sufficient for the data used in this exercise. If your available quota is lower than this, you will be able to complete the exercise but you may experience errors if the rate limit is exceeded.
+
+5. When your project is created, the chat playground will be opened automatically so you can test your model:
+6. In the Setup pane, note the name of your model deployment; which should be gpt-4o. You can confirm this by viewing the deployment in the Models and endpoints page (just open that page in the navigation pane on the left).
+7. In the navigation pane on the left, select Overview to see the main page for your project; which looks like this:
+
+## 2. Create a client application to chat with the model
 
 ### 4. variables de entorno
 
