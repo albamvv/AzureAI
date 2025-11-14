@@ -41,5 +41,53 @@ python -m venv labenv
 pip install azure-identity azure-ai-projects openai
 ```
 
+## Architecture Notes: Azure AI Foundry + Connected AI Resource
+
+Azure AI Foundry is responsible for orchestration:
+- project configuration
+- model deployment workflows
+- evaluation pipelines
+- UI and management experience
+
+The Connected AI Resource (Azure OpenAI) provides:
+- model hosting and runtime execution
+- inference endpoints and API keys
+- quota and throughput limits
+- safety filters and enterprise access controls
+
+In this architecture:
+- **Foundry** = control plane  
+- **Connected AI Resource** = data plane  
+Both layers work together to support end-to-end generative AI development.
+
+## Understanding Azure AI Foundry and the Connected AI Resource
+
+Below is a simplified view of how both components work together:
+
+                 ┌───────────────────────────────┐
+                 │       Azure AI Foundry        │
+                 │  • UI / Workspace             │
+                 │  • Project orchestration      │
+                 │  • Evaluations & pipelines    │
+                 │  • Management & monitoring    │
+                 └───────────────┬───────────────┘
+                                 │ orchestrates
+                                 ▼
+                 ┌───────────────────────────────┐
+                 │   Connected AI Resource       │
+                 │   (Azure OpenAI backend)      │
+                 │  • Model hosting              │
+                 │  • Inference runtime          │
+                 │  • Quotas & throughput        │
+                 │  • Safety filters & policies  │
+                 └───────────────────────────────┘
+
+Summary:
+- Foundry = orchestration layer (control plane)
+- Connected AI Resource = execution layer (data plane)
+
+
+
+
 
 

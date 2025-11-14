@@ -157,7 +157,7 @@ Repeat the same steps to deploy gpt-4o-mini.
 7. Review each response and score it with 👍 / 👎.
 8. Save the results.
 
-<p align="left"><img src="./images/save_results.png" height="280px"></p>
+<p align="left"><img src="./images/save_results.png" height="240px"></p>
 
 
 ## 4. Automated Model Evaluation
@@ -165,12 +165,14 @@ Repeat the same steps to deploy gpt-4o-mini.
 1. In the Evaluation page, open the Automated evaluations tab.
 2. Select “Create a new evaluation → Evaluate a model”.
 
-<p align="left"><img src="./images/automated_evaluate.png" height="280px"></p>
+<p align="left"><img src="./images/automated_evaluate.png" height="240px"></p>
 
 3. Choose the previously uploaded dataset.
 4. Select gpt-4o-mini as the model.
 5. Use the same system message:
    Assist users with travel-related inquiries, offering tips, advice, and recommendations as a knowledgeable travel agent.
+<p align="left"><img src="./images/evaluation.png" height="280px"></p>
+   
 6. Set Query: {{item.question}}
 
 ### Add Evaluators
