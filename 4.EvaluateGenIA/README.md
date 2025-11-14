@@ -127,22 +127,46 @@ Repeat the same steps to deploy gpt-4o-mini.
 
 1. Download the evaluation dataset:
    https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel_evaluation_data.jsonl
-2. In Azure AI Foundry, go to Protect and govern → Evaluation.
-3. In the Manual evaluations tab, select “+ New manual evaluation”.
-4. Select your gpt-4o deployment.
-5. Set the system message:
+2. In Azure AI Foundry, go to Protect and govern → Evaluation. In the Manual evaluations tab, select “+ New manual evaluation”.
+
+<div style="display: flex; gap: 10px;">
+  <img src="./images/protect_govern.png" height="240px">
+  <img src="./images/manual_evaluation.png" height="240px">
+</div>
+
+3. Select your gpt-4o deployment.Set the system message:
    Assist users with travel-related inquiries, offering tips, advice, and recommendations as a knowledgeable travel agent.
-6. Import the .jsonl file and map the fields:
-   - Input → Question
-   - Expected response → ExpectedResponse
-7. Run the evaluation to generate the Output column.
-8. Review each response and score it with 👍 / 👎.
-9. Save the results.
+
+<p align="left"><img src="./images/assistant_setup.png" height="280px"></p>
+   
+5. In the Manual evaluation result section, select Import test data and upload the travel_evaluation_data.jsonl file you downloaded previously; scrolling down to map the dataset fields as follows:
+
+- Input: Question
+- Expected response: ExpectedResponse
+- Import the .jsonl file and map the fields:
+
+<div style="display: flex; gap: 10px;">
+  <img src="./images/dataset_preview.png" height="240px">
+  <img src="./images/mapeo.png" height="240px">
+</div>
+
+6. Run the evaluation to generate the Output column.
+
+<p align="left"><img src="./images/run_evaluation.png" height="280px"></p>
+
+7. Review each response and score it with 👍 / 👎.
+8. Save the results.
+
+<p align="left"><img src="./images/save_results.png" height="280px"></p>
+
 
 ## 4. Automated Model Evaluation
 
 1. In the Evaluation page, open the Automated evaluations tab.
 2. Select “Create a new evaluation → Evaluate a model”.
+
+<p align="left"><img src="./images/automated_evaluate.png" height="280px"></p>
+
 3. Choose the previously uploaded dataset.
 4. Select gpt-4o-mini as the model.
 5. Use the same system message:
