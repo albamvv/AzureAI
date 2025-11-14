@@ -57,59 +57,37 @@ This project acts as the workspace where the model deployment, agent configurati
 
 6. In the Setup pane, note the name of your model deployment; which should be gpt-4o. You can confirm this by viewing the deployment in the Models and endpoints page (just open that page in the navigation pane on the left).
 
-<p align="left"><img src="./images/model_endpoints.png" height="380px"></p> 
+<p align="left"><img src="./images/model_endpoints.png" height="340px"></p> 
 
 7. In the navigation pane on the left, select Overview to see the main page for your project; which looks like this:
 
-<p align="left"><img src="./images/overview.png" height="380px"></p> 
+<p align="left"><img src="./images/overview.png" height="340px"></p> 
 
 ## 2. Create a client application to chat with the model
 
 
-### 1. Prepare the Application Configuration
+###  Prepare the Application Configuration
 
 1. In the **Azure AI Foundry** portal, open your project and go to the **Overview** page.
+
+<p align="left"><img src="./images/overview.png" height="340px"></p> 
+
 2. In the **Endpoints and keys** section:
    - Ensure the **Azure AI Foundry library** option is selected.
    - Locate your **Project endpoint** — this will be used to connect your application to your deployed model.
 
 > **Note:** You can also use the **Azure OpenAI endpoint** if preferred.
 
-
-### 2. Open Azure Cloud Shell
-
-1. Open a new browser tab and navigate to the **Azure portal**:  https://portal.azure.com
-2. Close any pop-up notifications to view the Home page.
-3. Select the **Cloud Shell** button (`[>_]`) located to the right of the Azure search bar.
-4. When prompted:
-   - Choose **PowerShell**  
-   - Select **No storage** (storage is NOT required for this exercise)
-
-The Cloud Shell will open as a panel at the bottom of the screen.  
-You can resize or maximize it for convenience.
-
-> **Note:** If a Bash environment opens automatically, switch it to **PowerShell**.
-
----
-
-### 3. Switch Cloud Shell to Classic Mode
-
-This step is required to use the built-in code editor.
-
-1. In the Cloud Shell toolbar, open the **Settings** menu.
-2. Select **Go to Classic version**.
-3. Confirm that Cloud Shell is now in classic mode before continuing.
-
----
-
-### 4. Clone the Code Repository
-
-In the Cloud Shell terminal, enter the following commands:
+###  Prepare the Application Configuration to connect with Azure OpenAI enpoints
 
 ```bash
-rm -r mslearn-ai-foundry -f
-git clone https://github.com/microsoftlearning/mslearn-ai-studio mslearn-ai-foundry
+model_deployment =  os.getenv("MODEL_DEPLOYMENT")
+azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
+azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+api_version = os.getenv("OPENAI_API_VERSION")
 ```
+
+---
 
 ## 4. variables de entorno
 

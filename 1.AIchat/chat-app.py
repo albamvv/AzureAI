@@ -12,7 +12,6 @@ def main():
     
         # Get configuration settings 
         load_dotenv()
-        #project_endpoint = os.getenv("PROJECT_ENDPOINT")
         model_deployment =  os.getenv("MODEL_DEPLOYMENT")
         azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
         azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
