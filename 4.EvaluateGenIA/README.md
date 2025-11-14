@@ -96,11 +96,14 @@ The next steps (according to the lab instructions) will involve:
 1. In the project, go to My assets → Models + endpoints. Select “+ Deploy model → Deploy base model”.
 
 <div style="display: flex; gap: 10px;">
-  <img src="./images/models_endpoints.png" height="280px">
-  <img src="./images/deploy_model.png" height="280px">
+  <img src="./images/models_endpoints.png" height="240px">
+  <img src="./images/deploy_model.png" height="240px">
 </div>
 
 2. Search for and select gpt-4o.
+
+<p align="left"><img src="./images/search_gpt-4o.png" height="280px"></p>
+
 3. Configure:
    - Deployment name: valid unique name
    - Deployment type: Standard
@@ -109,10 +112,16 @@ The next steps (according to the lab instructions) will involve:
    - Connected AI resource: your Azure OpenAI connection
    - Tokens per Minute: 50K (or the maximum available)
    - Content filter: DefaultV2
+
+<p align="left"><img src="./images/deploy_gpt4o.png" height="280px"></p>
+   
 4. Deploy the model.
+
+<p align="left"><img src="./images/gpt-4o_model.png" height="280px"></p>
 
 ### Deploy gpt-4o-mini
 Repeat the same steps to deploy gpt-4o-mini.
+<p align="left"><img src="./images/models.png" height="280px"></p>
 
 ## 3. Manual Model Evaluation
 
