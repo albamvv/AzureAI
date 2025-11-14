@@ -89,21 +89,21 @@ api_version = os.getenv("OPENAI_API_VERSION")
 
 1. MODEL_DEPLOYMENT
 
-<p align="left"><img src="./images/MODEL_DEPLOYMENT.png" height="300px"></p> 
+<p align="left"><img src="./images/MODEL_DEPLOYMENT.png" height="380px"></p> 
 
 2. OPENAI_API_VERSION
 
-<p align="left"><img src="./images/OPENAI_API_VERSION.png" height="300px"></p> 
+<p align="left"><img src="./images/OPENAI_API_VERSION.png" height="380px"></p> 
 
 > **Note:** RESOURCE DATA
 
 3. AZURE_OPENAI_KEY
 
-<p align="left"><img src="./images/AZURE_OPENAI_KEY.png" height="300px"></p> 
+<p align="left"><img src="./images/AZURE_OPENAI_KEY.png" height="380px"></p> 
 
 4. AZURE_OPENAI_ENDPOINT
 
-<p align="left"><img src="./images/AZURE_OPENAI_ENDPOINT.png" height="300px"></p> 
+<p align="left"><img src="./images/AZURE_OPENAI_ENDPOINT.png" height="380px"></p> 
 
 
 

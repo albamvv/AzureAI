@@ -16,7 +16,7 @@ In this exercise, you will:
 ## Activar entorno
 
 ```bash
-source labenv/Scripts/activate
+source .venv/bin/activate
 ```
 
 ## ⚙️ Prerequisites
