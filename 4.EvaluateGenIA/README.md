@@ -22,6 +22,16 @@ The steps below initialize that environment.
     - https://ai.azure.com/managementCenter/allResources
 
     <p align="center"><img src="./images/management_center.png" height="280px"></p>
+
+    Note: 
+    - in this screen, you are creating a new Azure AI Foundry project, which serves as the workspace where models, datasets, evaluations, and AI workflows will live.
+    - Azure automatically creates (or lets you rename) an AI Hub, which acts as the central control plane for:
+    - - organizing AI resources
+    - - securely storing connections
+    - - providing shared infrastructure for models and evaluations
+    - - enabling collaboration within the workspace
+    - - This is required because every Azure AI Foundry project must be attached to a hub.
+
     
 3. In the creation wizard:
 
@@ -34,6 +44,10 @@ The steps below initialize that environment.
      - Resource group: AI-102
      - Region: any recommended region
 
+4. Create the project and wait until deployment is complete.
+
+<p align="center"><img src="./images/project.png" height="280px"></p>
+
 ### Why these settings matter
 - The **hub** aggregates all AI operations: model inference, quotas, endpoints, monitoring, and shared assets.
 - The **region** determines availability and latency for Azure AI services.
@@ -41,9 +55,6 @@ The steps below initialize that environment.
 - The **subscription** defines quota limits for model deployments, evaluations, and token usage.
 
 --- 
-4. Create the project and wait until deployment is complete.
-
-<p align="center"><img src="./images/project.png" height="280px"></p>
 
 ## 2. Deploy the Models
 
