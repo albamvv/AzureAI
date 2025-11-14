@@ -26,11 +26,11 @@ The steps below initialize that environment.
     Note: 
     - in this screen, you are creating a new Azure AI Foundry project, which serves as the workspace where models, datasets, evaluations, and AI workflows will live.
     - Azure automatically creates (or lets you rename) an AI Hub, which acts as the central control plane for:
-    - - organizing AI resources
-    - - securely storing connections
-    - - providing shared infrastructure for models and evaluations
-    - - enabling collaboration within the workspace
-    - - This is required because every Azure AI Foundry project must be attached to a hub.
+        - organizing AI resources
+        - securely storing connections
+        - providing shared infrastructure for models and evaluations
+        - enabling collaboration within the workspace
+        - This is required because every Azure AI Foundry project must be attached to a hub.
 
     
 3. In the creation wizard:
