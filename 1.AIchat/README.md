@@ -18,7 +18,7 @@ Let's start by deploying a model in an Azure AI Foundry project.
 
 1. Open a web browser and navigate to the Azure AI Foundry portal at https://ai.azure.com and sign in
 2. In the home page, in the Explore models and capabilities section, search for the **gpt-4o model**; which we'll use in our project.
-3. In the search results, select the gpt-4o model to see its details, and then at the top of the page for the model, select Use this model. When prompted to create a project, enter a valid name for your project and expand Advanced options.
+3. In the search results, select the gpt-4o model to see its details, and then at the top of the page for the model, select Use this model. When prompted to create a project, enter a valid name for your project and expand Advanced options. Select Create and wait for your project to be created.
 
 <p align="left"><img src="./images/gpt-4o_model.png" height="280px"></p> 
 
@@ -37,9 +37,11 @@ After selecting **Customize**, specify the following settings for your project:
 > **Note:** Some Azure AI resources are limited by regional model quotas.  
 > If you encounter quota limitations later in the exercise, you may need to create the resource again in a different region.
 
-4. Select Create and wait for your project to be created. If prompted, deploy the gpt-4o model using the Standard deployment type and customize the deployment details to set a Tokens per minute rate limit of 5K.
- 
 <p align="left"><img src="./images/create_project.png" height="280px"></p> 
+
+4. If prompted, deploy the gpt-4o model using the Standard deployment type and customize the deployment details to set a Tokens per minute rate limit of 5K.
+ 
+<p align="left"><img src="./images/deploy_gpt4.png" height="280px"></p> 
  
 > **Note:** Why Azure prompts to create a project when deploying a model--> Azure AI Foundry requires a project to manage model deployments, resources, and configurations. 
 If no project exists when you select **Use this model**, Azure automatically asks you to create one. 
