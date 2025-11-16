@@ -41,68 +41,145 @@ python -m venv labenv
 pip install azure-identity azure-ai-projects openai
 ```
 
-## 🧱 Architecture Notes: Azure AI Foundry + Connected AI Resource
 
-Azure AI Foundry is responsible for orchestration:
-- project configuration
-- model deployment workflows
-- evaluation pipelines
-- UI and management experience
+## 🧱 Azure AI Foundry Architecture (Control Plane, Resource, Data Plane)
 
-The Connected AI Resource (Azure OpenAI) provides:
-- model hosting and runtime execution
-- inference endpoints and API keys
-- quota and throughput limits
-- safety filters and enterprise access controls
+### **1. Azure AI Foundry (Control Plane – Orchestration Layer)**
 
-In this architecture:
-- **Foundry** = control plane  
-- **Connected AI Resource** = data plane  
-Both layers work together to support end-to-end generative AI development.
+**Location:** https://ai.azure.com  
+Azure AI Foundry manages and orchestrates the lifecycle of your AI applications:
 
-## Understanding Azure AI Foundry and the Connected AI Resource
+- project configuration  
+- model deployment workflows  
+- evaluation pipelines  
+- UI and management experience  
 
-Below is a simplified view of how both components work together:
 
-                 ┌───────────────────────────────┐
-                 │       Azure AI Foundry        │
-                 │  • UI / Workspace             │
-                 │  • Project orchestration      │
-                 │  • Evaluations & pipelines    │
-                 │  • Management & monitoring    │
-                 └───────────────┬───────────────┘
-                                 │ orchestrates
-                                 ▼
-                 ┌───────────────────────────────┐
-                 │   Connected AI Resource       │
-                 │   (Azure OpenAI backend)      │
-                 │  • Model hosting              │
-                 │  • Inference runtime          │
-                 │  • Quotas & throughput        │
-                 │  • Safety filters & policies  │
-                 └───────────────────────────────┘
+> **This is the control plane. Models do NOT run here.**  
+> This is the workspace you see in the screenshot (ai.azure.com), where you build agents, RAG flows, evaluate prompts, manage deployments, etc.
+> This layer handles governance, configuration, and orchestration.
 
-Summary:
-- Foundry = orchestration layer (control plane)
-- Connected AI Resource = execution layer (data plane)
 
-### Azure AI Foundry
+---
 
-There are two types of projects in Azure AI Foundry.
+### **2. Azure AI Resource (Azure Portal – Infrastructure Boundary)**
 
-<p align="left"><img src="./images/azure_projects.png" height="380px"></p> 
+**Location:** https://portal.azure.com 
+This is the resource created in the Azure Portal that defines the technical boundary in which Foundry operates:
 
-1. **Foundry projects**
+- region  
+- network and security (VNET, Private Endpoints)  
+- RBAC and access control  
+- billing and quotas  
+- linked Key Vault / Storage  
 
-Foundry projects are associated with an Azure AI Foundry resource in an Azure subscription. Foundry projects provide support for Azure AI Foundry models (including OpenAI models), Azure AI Foundry Agent Service, Azure AI services, and tools for evaluation and responsible AI development.
+> **This resource is created and managed from the Azure Portal.**  
+> It enables Foundry, applies policy, and enforces security/compliance requirements.
 
-An Azure AI Foundry resource supports the most common AI development tasks to develop generative AI chat apps and agents. In most cases, using a Foundry project provides the right level of resource centralization and capabilities with a minimal amount of administrative resource management. You can use Azure AI Foundry portal to work in projects that are based in Azure AI Foundry resources, making it easy to add connected resources and manage model and agent deployments.
+---
 
-2. **Hub-based projects**
+### **3. Connected AI Resource (Azure OpenAI – Data Plane)**
 
-Hub-based projects are associated with an Azure AI hub resource in an Azure subscription. Hub-based projects include an Azure AI Foundry resource, as well as managed compute, support for Prompt Flow development, and connected Azure storage and Azure key vault resources for secure data storage.
+**Runtime Location:** backend service (not directly visible; used via API endpoints)  
+**Management Location:** via Azure Portal or automatically connected in Foundry  
 
-Azure AI hub resources support advanced AI development scenarios, like developing Prompt Flow based applications or fine-tuning models. You can also use Azure AI hub resources in both Azure AI Foundry portal and Azure Machine learning portal, making it easier to work on collaborative projects that involve data scientists and machine learning specialists as well as developers and AI software engineers
+This is the backend where models actually execute:
+
+- model hosting and runtime execution  
+- inference endpoints and API keys  
+- quota and throughput limits  
+- safety filters and enterprise access controls  
+
+> **This is the data plane. Models like GPT-4o actually run here.**  
+> Foundry (ai.azure.com) orchestrates calls to this backend when you run agents, chats, evaluations, or deployments.
+
+
+---
+
+# 🧭 Summary
+
+- **Azure AI Foundry (ai.azure.com)** → orchestration & workspace (control plane)  
+- **Azure AI Resource (portal.azure.com)** → infrastructure & security boundary  
+- **Azure OpenAI (backend)** → model execution & inference (data plane)
+
+
+
+                      Azure Subscription
+                              │
+                              ▼
+               ┌──────────────────────────────────┐
+               │   Azure AI Resource (Portal)     │
+               │  • Region                        │
+               │  • Network / Security            │
+               │  • RBAC                          │
+               │  • Billing                       │
+               │  • Key Vault / Storage           │
+               └───────────────┬──────────────────┘
+                               │ enables
+                               ▼
+               ┌──────────────────────────────────┐
+               │   Azure AI Foundry (Control Plane)│
+               │  • Project configuration          │
+               │  • Model deployment workflows     │
+               │  • Evaluations & pipelines        │
+               │  • Management & monitoring        │
+               └───────────────┬──────────────────┘
+                               │ orchestrates
+                               ▼
+               ┌──────────────────────────────────┐
+               │ Connected AI Resource (Data Plane)│
+               │        Azure OpenAI Runtime       │
+               │  • Model hosting & inference      │
+               │  • Endpoints & API keys           │
+               │  • Quotas & throughput            │
+               │  • Safety filters & policies      │
+               └──────────────────────────────────┘
+
+
+### Azure AI Foundry Projects
+
+In Azure AI Foundry, you manage resource connections, data, code, and other solution components inside **projects**.  
+There are two types of projects:
+
+<p align="left"><img src="./images/azure_projects.png" height="380px"></p>
+
+---
+
+### **1. Foundry Projects**
+
+Foundry projects are associated with an Azure AI Foundry resource in an Azure subscription.  
+They provide support for:
+
+- Azure Foundry foundation models (including OpenAI models)  
+- Azure AI Foundry Agent Service  
+- Azure AI Services  
+- Evaluation and responsible AI tools  
+
+A Foundry resource supports the most common generative AI development tasks for apps and agents.  
+In most cases, a Foundry project offers the right level of centralization with minimal administrative overhead.
+
+You can work on Foundry projects through the Azure AI Foundry portal, easily adding connected resources and managing model/agent deployments.
+
+---
+
+### **2. Hub-based Projects**
+
+Hub-based projects are associated with an **Azure AI Hub** in an Azure subscription.  
+A hub-based project includes:
+
+- an Azure AI Foundry resource  
+- managed compute  
+- support for Prompt Flow development  
+- connected Azure Storage and Key Vault for secure data handling  
+
+Azure AI Hub resources support more advanced scenarios such as Prompt Flow applications or model fine-tuning.  
+
+They can be used both in the **Azure AI Foundry portal** and the **Azure Machine Learning portal**, enabling collaboration across:
+
+- data scientists  
+- ML engineers  
+- developers  
+- AI software engineers  
 
 
 
