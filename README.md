@@ -13,11 +13,6 @@ In this exercise, you will:
 3. Build a **Python chat client** using the **Azure AI Foundry** and **Azure OpenAI SDKs**.  
 4. Interact with your model through a command-line chat interface.  
 
-## ⚙️ Activar entorno
-
-```bash
-source .venv/bin/activate
-```
 
 ## ⚙️ Prerequisites
 
@@ -36,11 +31,8 @@ Before you start, ensure you have:
 Create a virtual environment and install dependencies:
 
 ```bash
-python -m venv labenv
-.\labenv\Scripts\activate
-pip install azure-identity azure-ai-projects openai
+source .venv/bin/activate
 ```
-
 
 ## 🧱 Azure AI Foundry Architecture (Control Plane, Resource, Data Plane)
 
@@ -77,6 +69,7 @@ This is the resource created in the Azure Portal that defines the technical boun
 > It enables Foundry, applies policy, and enforces security/compliance requirements.
 
 <p align="left"><img src="./images/recursos_portal_azure.png" height="380px"></p>
+
 
 
 ---
@@ -174,6 +167,7 @@ There are two types of projects:
 
 <p align="left"><img src="./images/azure_projects.png" height="380px"></p>
 
+<p align="left"><img src="./images/crear_proyecto.png" height="380px"></p>
 ---
 
 ### **1. Foundry Projects**
@@ -191,6 +185,8 @@ In most cases, a Foundry project offers the right level of centralization with m
 
 You can work on Foundry projects through the Azure AI Foundry portal, easily adding connected resources and managing model/agent deployments.
 
+
+<p align="left"><img src="./images/azure_foundry_projects.png" height="380px"></p>
 ---
 
 ### **2. Hub-based Projects**
