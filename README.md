@@ -76,6 +76,37 @@ This is the resource created in the Azure Portal that defines the technical boun
 > **This resource is created and managed from the Azure Portal.**  
 > It enables Foundry, applies policy, and enforces security/compliance requirements.
 
+<p align="left"><img src="./images/recursos_portal_azure.png" height="380px"></p>
+
+
+---
+
+#### 🏗️ Resource Provisioning in Azure (What “Provisioning” Actually Means)
+
+When you create an Azure AI Resource (or any Azure service) in the Azure Portal, Azure performs a process called **provisioning**.
+
+Provisioning includes:
+
+- creating the logical resource object  
+- assigning infrastructure (compute, storage, networking)  
+- applying Azure Policy, RBAC, and security rules  
+- validating the region and SKU you selected  
+- generating endpoints and access keys  
+- leaving the resource in a fully operational state (“Provisioned / Succeeded”)  
+
+In other words:
+
+> **Provisioning = creating a resource + configuring and initializing everything Azure needs for that service to run.**
+
+Examples:
+- Creating an Azure AI Search service (for indexes and vector search used in RAG)  
+- Creating a Translator/Speech/Vision resource  
+- Creating a Foundry resource itself  
+- Creating a Key Vault or Storage account linked to your project  
+
+Whenever you click *Review + Create* in the Azure Portal and Azure deploys the resource,  
+**that is the provisioning phase**.
+
 ---
 
 ### **3. Connected AI Resource (Azure OpenAI – Data Plane)**
