@@ -34,6 +34,10 @@ Create a virtual environment and install dependencies:
 source .venv/bin/activate
 ```
 
+## Documentation
+- [01 Introducción a Azure AI](docs/01_introduccion.md)
+- [02 Autenticación y SDK](docs/02_autenticacion.md)
+- [03 Arquitectura Foundry / Control/Data Plane](docs/03_arquitectura.md)
 
 
 

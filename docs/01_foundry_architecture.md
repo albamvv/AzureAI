@@ -105,23 +105,23 @@ This is the backend where models actually execute:
                └───────────────┬──────────────────┘
                                │ enables
                                ▼
-               ┌──────────────────────────────────┐
+               ┌───────────────────────────────────┐
                │   Azure AI Foundry (Control Plane)│
                │  • Project configuration          │
                │  • Model deployment workflows     │
                │  • Evaluations & pipelines        │
                │  • Management & monitoring        │
-               └───────────────┬──────────────────┘
+               └───────────────┬───────────────────┘
                                │ orchestrates
                                ▼
-               ┌──────────────────────────────────┐
+               ┌───────────────────────────────────┐
                │ Connected AI Resource (Data Plane)│
                │        Azure OpenAI Runtime       │
                │  • Model hosting & inference      │
                │  • Endpoints & API keys           │
                │  • Quotas & throughput            │
                │  • Safety filters & policies      │
-               └──────────────────────────────────┘
+               └───────────────────────────────────┘
 
 
 ## Azure AI Foundry Projects
@@ -209,6 +209,8 @@ These endpoints represent the **model execution layer** used by agents, chat app
 #### Model implementations
 
 <p align="left"><img src="./images/modelos.png" height="380px"></p>
+
+<p align="left"><img src="./images/sdk.png" height="380px"></p>
 
 #### Model example
 <p align="left"><img src="./images/modelo_ejemplo.png" height="380px"></p>
