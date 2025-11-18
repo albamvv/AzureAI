@@ -120,7 +120,7 @@ This is the backend where models actually execute:
 
 ---
 
-# 🧭 Summary
+### **4. Summary**
 
 - **Azure AI Foundry (ai.azure.com)** → orchestration & workspace (control plane)  
 - **Azure AI Resource (portal.azure.com)** → infrastructure & security boundary  
@@ -160,7 +160,7 @@ This is the backend where models actually execute:
                └──────────────────────────────────┘
 
 
-### Azure AI Foundry Projects
+## Azure AI Foundry Projects
 
 In Azure AI Foundry, you manage resource connections, data, code, and other solution components inside **projects**.  
 There are two types of projects:
@@ -208,6 +208,46 @@ They can be used both in the **Azure AI Foundry portal** and the **Azure Machine
 - developers  
 - AI software engineers  
 
+
+## 📁 My Resources
+
+Azure AI Foundry provides a **My Resources** section inside each project.  
+This section represents the complete inventory of assets your project relies on, including data stores, search indexes, and model endpoints.
+
+### **1. Data & Indexes**
+
+This area includes all data-related resources connected to the project:
+
+- search indexes  
+- vector indexes used for RAG  
+- document ingestion sources  
+- Azure AI Search resources  
+- metadata stores  
+- data collections and embeddings  
+
+These resources support retrieval, grounding, evaluations, and agent-based workflows.
+
+---
+
+### **2. Models + Endpoints**
+
+This section contains all model assets associated with the project:
+
+- foundation models deployed in Azure AI Foundry  
+- Azure OpenAI endpoints connected to the project  
+- model deployments (GPT-4o, Phi-3, embeddings, etc.)  
+- model configuration, quotas, and versions  
+
+These endpoints represent the **model execution layer** used by agents, chat apps, Prompt Flow pipelines, and evaluation tools.
+
+<p align="left"><img src="./images/implementacion_modelo.png" height="380px"></p>
+
+#### Model implementations
+
+<p align="left"><img src="./images/modelos.png" height="380px"></p>
+
+#### Model example
+<p align="left"><img src="./images/modelo_ejemplo.png" height="380px"></p>
 
 
 
