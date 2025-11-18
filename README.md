@@ -249,7 +249,46 @@ These endpoints represent the **model execution layer** used by agents, chat app
 #### Model example
 <p align="left"><img src="./images/modelo_ejemplo.png" height="380px"></p>
 
+1. Autenticación mediante la clave de API
 
+Para los puntos de conexión de API de OpenAI, implemente el Modelo para generar la URL del punto de conexión y una clave de API para autenticarse con el servicio. En esta muestra, el punto de conexión y la clave son cadenas que contienen la dirección URL del punto de conexión y la clave de API.
+
+La dirección URL del punto de conexión de API y la clave de API se pueden encontrar en la página Implementaciones y punto de conexión una vez implementado el modelo.
+
+Para crear un cliente con el SDK de OpenAI usando una clave de API, inicialice el cliente pasando su clave de API a la configuración del SDK. Esto le permite autenticarse e interactuar con los servicios de OpenAI sin problemas:
+
+
+```bash
+import os
+from openai import AzureOpenAI
+
+client = AzureOpenAI(
+    api_version="2024-12-01-preview",
+    azure_endpoint="https://demobcrail02-resource.cognitiveservices.azure.com/",
+    api_key=subscription_key,
+)
+```
+
+**Ejecutar un ejemplo de codigo basico**
+
+```bash
+import os
+from openai import AzureOpenAI
+
+endpoint = "https://demobcrail02-resource.cognitiveservices.azure.com/"
+model_name = "gpt-4.1-mini"
+deployment = "gpt-4.1-mini-2"
+
+subscription_key = "<your-api-key>"
+api_version = "2024-12-01-preview"
+
+client = AzureOpenAI(
+    api_version=api_version,
+    azure_endpoint=endpoint,
+    api_key=subscription_key,
+)
+
+```
 
 
 
