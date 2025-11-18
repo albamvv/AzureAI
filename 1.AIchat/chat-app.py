@@ -12,17 +12,26 @@ def main():
     
         # Get configuration settings 
         load_dotenv()
+        """
         model_deployment =  os.getenv("MODEL_DEPLOYMENT")
         azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
         azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
         api_version = os.getenv("OPENAI_API_VERSION")
+        """
+        model_deployment =  os.getenv("MODEL_DEPLOYMENT_NAME")
+        
+        azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
+        azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 
+        azure_openai_key = os.getenv("AZURE_PROJECT_KEY")
+        azure_openai_resource_endpoint = os.getenv("AZURE_OPEN_AI_RESOURCE_ENDPOINT")
+        #api_version = os.getenv("OPENAI_API_VERSION")
 
         # Initialize the project client
         openai_client = AzureOpenAI(
             api_key=azure_openai_key,
-            azure_endpoint=azure_openai_endpoint,
-            api_version=api_version
+            azure_endpoint=azure_openai_resource_endpoint,
+            #api_version=api_version
         )
         
         # Initialize prompt with system message
