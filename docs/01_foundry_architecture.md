@@ -255,3 +255,49 @@ client = AzureOpenAI(
 )
 
 ```
+
+## 🔧 Azure OpenAI – Deployment Types 
+
+Azure OpenAI offers multiple deployment modes depending on latency requirements, data-residency constraints, and guaranteed throughput expectations.
+
+1. Global Standard
+
+- Inference served from Azure’s global infrastructure.
+- Optimized latency and high availability.
+- No strict data-residency guarantees.
+
+2. Data-Zone Standard
+
+- Processing confined to a specific Data Zone.
+- Ensures regional data residency.
+- Suitable for moderately regulated sectors.
+
+3. Global Batch
+
+- Optimized for non–real-time batch processing.
+- Lower cost and high throughput.
+- Ideal for large-scale offline workloads.
+
+4. Data-Zone Batch
+
+- Batch mode with data restricted to a Data Zone.
+- Supports regulatory compliance for offline workloads.
+
+5. Global Provisioned Throughput
+
+- Dedicated, guaranteed capacity (PTUs) at a global level.
+- No throttling, predictable latency.
+- Requires a capacity contract.
+
+6. Data-Zone Provisioned Throughput
+
+- Dedicated capacity with strict data-residency boundaries.
+- Suitable for financial services and regulated workloads.
+
+7. Regional Provisioned Throughput
+
+- Dedicated capacity tied to a single Azure region.
+- Maximum residency control and regulatory compliance.
+- Higher cost; used for mission-critical systems.
+
+<p align="left"><img src="./images/implementacion.png" height="380px"></p>

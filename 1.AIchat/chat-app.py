@@ -12,18 +12,27 @@ def main():
     
         # Get configuration settings 
         load_dotenv()
-        """
-        model_deployment =  os.getenv("MODEL_DEPLOYMENT")
-        azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
-        azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-        api_version = os.getenv("OPENAI_API_VERSION")
-        """
-        model_deployment =  os.getenv("MODEL_DEPLOYMENT_NAME")
-        
-        azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
-        azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 
-        azure_openai_key = os.getenv("AZURE_PROJECT_KEY")
+        model_deployment =  os.getenv("MODEL_DEPLOYMENT_NAME")
+    
+        ## AZ LOGIN
+        """
+        project_client =AIProjectClient(
+            credential=DefaultAzureCredential(
+                exclude_environment_credential=True,
+                exclude_managed_identity_credential=True
+            ),
+            endpoint=project_endpoint,
+        )
+        openai_client =project_client.get_openai_client()
+        """
+
+       
+        #azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
+        #azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        #api_version = os.getenv("OPENAI_API_VERSION")
+       
+        azure_openai_key = os.getenv("AZURE_OPENAI_KEY")
         azure_openai_resource_endpoint = os.getenv("AZURE_OPEN_AI_RESOURCE_ENDPOINT")
         #api_version = os.getenv("OPENAI_API_VERSION")
 
