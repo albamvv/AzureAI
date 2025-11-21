@@ -321,6 +321,94 @@ Azure displays separate categories (Language APIs, Dall-E APIs, Whisper APIs), b
 
 ```bash
 https://<resource-name>.openai.azure.com/
+https://demofoundrybcr2.openai.azure.com/
 ```
 
 <p align="left"><img src="./images/endpoints.png" height="380px"></p>
+
+- **AI Foundry Endpoint** → for project management and orchestration (not inference).
+- **Azure OpenAI Endpoint** → for running GPT/DALL·E/Embeddings/Whisper deployments.
+- **Azure AI Services Endpoint** → for Speech, Vision, Translation, OCR, Content Safety, etc.
+
+
+> **Note:** When running code locally (VS Code, terminal, scripts, Jupyter, Postman…),
+you must always use the Azure OpenAI Resource endpoint + Resource Key,
+NOT the Foundry Project key or Foundry endpoint.
+
+```bash
+from openai import AzureOpenAI
+
+client = AzureOpenAI(
+    api_key="YOUR_RESOURCE_KEY",
+    azure_endpoint="https://demofoundrybcr2.openai.azure.com/",
+    api_version="2024-02-15-preview"
+)
+
+response = client.chat.completions.create(
+    model="gpt-4.1-mini-2",   # your deployment name
+    messages=[{"role": "user", "content": "Hello from VS Code!"}]
+)
+
+print(response.choices[0].message.content)
+```
+
+The endpoint you must use in your application code (Python, JS, REST, etc.) is the **Azure OpenAI Resource endpoint** shown in the **Azure Portal**. This endpoint represents the data-plane runtime for model execution, and it is the only endpoint capable of serving inference requests such as chat completions, embeddings, image generation, or audio transcription.
+
+Control-plane endpoints from Azure AI Foundry (ai.azure.com) or Cognitive Services endpoints (cognitiveservices.azure.com) cannot execute OpenAI models and must not be used in SDK integrations. Only the resource-level OpenAI endpoint ( https://<resource>.openai.azure.com ) supports authenticated model inference using the Resource Keys (Key 1 / Key 2).
+
+
+## 🧩 Alternatives: OLLAMA (Local LLM Runtime)
+
+
+In addition to Azure OpenAI, you can run large language models locally using Ollama.
+Ollama provides a lightweight runtime for serving open-source LLMs on your workstation (CPU or GPU), making it useful for:
+
+- Offline experimentation
+- Rapid prototyping without cloud dependencies
+- Testing prompts or workflows before deploying to Azure
+
+```bash
+# Download or update a model
+ollama pull <model-name>
+
+# List all locally available models
+ollama list
+
+# Run a model interactively or execute a prompt directly
+ollama run gpt-oss "List 10 countries that start with the letter A"
+```
+
+### How it works
+
+- `ollama pull <model-name>` downloads a model (e.g., `mistral`, `llama3`, `phi3`, `gpt-oss`) from the Ollama model registry.  
+- `ollama list` displays all models currently installed on your machine.  
+- `ollama run` launches a local instance of the model and processes your prompt.  
+
+You can call this endpoint from Python, JavaScript, cURL, or any HTTP client.
+
+---
+
+###  Why it can be useful
+
+- Enables local development without consuming Azure tokens.  
+- Lets you test **RAG pipelines**, **embeddings**, or **prompt engineering** without deployment overhead.  
+- Allows quick comparison between **open-source LLMs** and **Azure OpenAI models**.  
+- Useful in **restricted connectivity environments** or when **on-device privacy** is required.
+
+---
+
+### ⚠️ Important Note
+
+Ollama models run entirely on your local machine, which means they do **not** provide:
+
+- enterprise-grade availability  
+- SLA guarantees  
+- security hardening  
+- compliance required for regulated sectors (banking, insurance, healthcare, etc.)
+
+Because of this, Ollama is excellent for **experimentation, prototyping, and development**,  
+but **not suitable for production** workloads in enterprise or regulated environments.
+
+---
+
+
