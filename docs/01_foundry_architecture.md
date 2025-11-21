@@ -1,4 +1,4 @@
-## 🧱 Azure AI Foundry Architecture (Control Plane, Resource, Data Plane)
+##  Azure AI Foundry Architecture (Control Plane, Resource, Data Plane)
 
 ### **1. Azure AI Foundry (Control Plane – Orchestration Layer)**
 
@@ -260,44 +260,67 @@ client = AzureOpenAI(
 
 Azure OpenAI offers multiple deployment modes depending on latency requirements, data-residency constraints, and guaranteed throughput expectations.
 
-1. Global Standard
+### 1. Global Standard
 
 - Inference served from Azure’s global infrastructure.
 - Optimized latency and high availability.
 - No strict data-residency guarantees.
 
-2. Data-Zone Standard
+### 2. Data-Zone Standard
 
 - Processing confined to a specific Data Zone.
 - Ensures regional data residency.
 - Suitable for moderately regulated sectors.
 
-3. Global Batch
+### 3. Global Batch
 
 - Optimized for non–real-time batch processing.
 - Lower cost and high throughput.
 - Ideal for large-scale offline workloads.
 
-4. Data-Zone Batch
+### 4. Data-Zone Batch
 
 - Batch mode with data restricted to a Data Zone.
 - Supports regulatory compliance for offline workloads.
 
-5. Global Provisioned Throughput
+### 5. Global Provisioned Throughput
 
 - Dedicated, guaranteed capacity (PTUs) at a global level.
 - No throttling, predictable latency.
 - Requires a capacity contract.
 
-6. Data-Zone Provisioned Throughput
+### 6. Data-Zone Provisioned Throughput
 
 - Dedicated capacity with strict data-residency boundaries.
 - Suitable for financial services and regulated workloads.
 
-7. Regional Provisioned Throughput
+### 7. Regional Provisioned Throughput
 
 - Dedicated capacity tied to a single Azure region.
 - Maximum residency control and regulatory compliance.
 - Higher cost; used for mission-critical systems.
 
 <p align="left"><img src="./images/implementacion.png" height="380px"></p>
+
+## Azure AI Foundry
+
+#### **1. General information**
+
+In the **General Information (overview)** section of Azure AI Foundry, you will see the project-level endpoint and the project API key.
+This key is always the same for the project and is used to authenticate against the Foundry control plane.
+
+<p align="left"><img src="./images/general_information.png" height="380px"></p>
+
+If you go to the Azure Portal and open the underlying Azure AI Resource, you will typically find two resource keys.
+These keys belong to the data plane and are used for model inference (Azure OpenAI runtime).
+
+<p align="left"><img src="./images/portal_azure.png" height="380px"></p>
+
+On this page you can also see the runtime endpoints exposed by Azure OpenAI.
+Azure displays separate categories (Language APIs, Dall-E APIs, Whisper APIs), but in reality they all point to the same base endpoint:
+
+```bash
+https://<resource-name>.openai.azure.com/
+```
+
+<p align="left"><img src="./images/endpoints.png" height="380px"></p>
