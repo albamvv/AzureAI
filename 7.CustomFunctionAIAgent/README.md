@@ -136,7 +136,7 @@ cat ticket-<ticket_num>.txt
 
 ## Ejecutar sin AZ LOGIN
 
-1. Go to:
+### 1. Microsoft Entra ID (antes Azure AD)
 
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 
@@ -151,12 +151,97 @@ Microsoft Entra ID → Registros de aplicaciones → Nuevo registro
 
 Aqui sale nuestro valor "azure_client_id"
 
-<p align="left"><img src="./images/azure_client_id.png" height="380px"></p> 
+<p align="left"><img src="./images/azure_client_id.png" height="380px"></p>
+
+- Una vez creada:
+- - El Application (client) ID aparece arriba.
+- - El Directory (tenant) ID aparece también aquí (mismo que antes).
 
 ### 3. Crear el Secret: AZURE_CLIENT_SECRET
+
+https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Credentials
+
+>New client secret → Add → Copia el valor
 
 <p align="left"><img src="./images/certificados_secretos.png" height="380px"></p> 
 
 - El Valor es la clave secreta real que Azure AD usa para generar tokens.
 - El Id. de secreto solo identifica el secreto dentro de Azure; no sirve para autenticación.
 <p align="left"><img src="./images/valor.png" height="380px"></p> 
+
+### 4. Asignar permisos (rol IAM) a la App Registration
+
+1. Abrir los recursos
+<p align="left"><img src="./images/recursos.png" height="380px"></p> 
+
+#### Identificación de recursos en Azure AI Foundry
+
+2. Tienes dos recursos principales:
+
+ 1️⃣ `project-agent-resource`
+- **Tipo:** Fundición de IA (Azure AI Services)  
+- **Descripción:**  
+  Este es el *recurso raíz* del Azure AI Foundry.  
+  **Aquí es donde deben asignarse los permisos.**
+
+Este recurso controla las capacidades críticas:
+- Crear Agents  
+- Ejecutar Agents  
+- Llamar a `/assistants`  
+- Crear `/runs`  
+- Crear `/threads`  
+
+👉 **Este es el recurso que actualmente está bloqueando las operaciones.**
+
+
+
+ 2️⃣ `project_agent` (dentro de `project-agent-resource`)
+- **Tipo:** Proyecto de Azure AI  
+- **Descripción:**  
+  Este es el proyecto Foundry donde residen y se configuran los Agents, pero **no es** donde se gestionan los permisos fundamentales.
+
+
+📌 **Conclusión:**  
+Asigna los permisos directamente en **`project-agent-resource` (Fundición de IA)** para desbloquear todas las operaciones relacionadas con Agents y Assistants.
+
+3. Haz clic en:
+project-agent-resource (Tipo: Fundición de IA)
+<p align="left"><img src="./images/IAM.png" height="380px"></p> 
+
+
+4. Ahora los pasos exactos
+
+- Control de acceso (IAM)
+- Clic en + Agregar
+- Clic en Agregar asignación de rol
+- Buscar el rol:
+- - Azure AI Developer (recomendado)
+- - Cognitive Services Contributor
+
+- Seleccionar “Usuario, grupo o entidad de servicio”
+
+<p align="left"><img src="./images/asignar_acceso.png" height="380px"></p> 
+
+- Buscar tu App Registration:
+<p align="left"><img src="./images/miembros.png" height="380px"></p> 
+
+👉 agents-client-app
+
+- Seleccionarlo y guardar
+
+
+---------------------- otra cosa
+
+Para que tu aplicación pueda usar Azure OpenAI o Azure AI Agents:
+
+🔗 Subscriptions → IAM
+https://portal.azure.com/#view/Microsoft_Azure_Subscriptions/SubscriptionMenuBlade/~/AccessControl
+
+O si quieres asignar rol directamente sobre el recurso AI:
+
+🔗 Azure OpenAI / Azure AI Project → Access Control (IAM)
+https://portal.azure.com/#view/Microsoft_Azure_AD/WebResourcesBlade/resourceMenuId/iam
+
+- Roles relevantes:
+- - Cognitive Services User
+- - Azure AI Developer (si usas Agents)

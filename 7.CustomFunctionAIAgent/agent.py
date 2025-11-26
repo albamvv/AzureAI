@@ -26,16 +26,16 @@ def main():
     project_key = os.getenv("PROJECT_KEY")
 
     # Connect to the Agent client AZ LOGIN
-
+    """
     agent_client = AgentsClient(
         endpoint=project_endpoint,
         credential=DefaultAzureCredential      
             (exclude_environment_credential=True,
             exclude_managed_identity_credential=True)
-    )
+    )"""
 
     ## Sin AZ LOGIN
-    """
+   
     from azure.identity import ClientSecretCredential
 
     credential = ClientSecretCredential(
@@ -47,7 +47,7 @@ def main():
     agent_client = AgentsClient(
         endpoint=project_endpoint,
         credential=credential
-    )"""
+    )
 
 
     # Define an agent that can use the custom functions
