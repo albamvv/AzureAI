@@ -136,10 +136,9 @@ cat ticket-<ticket_num>.txt
 
 ## Ejecutar sin AZ LOGIN
 
+1. Go to:
+
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
-
-<p align="left"><img src="./images/technical_problem.png" height="380px"></p> 
-
 
 
 ### 2. Crear la App Registration
@@ -147,14 +146,14 @@ Microsoft Entra ID → Registros de aplicaciones → Nuevo registro
 
 <p align="left"><img src="./images/crear_app.png" height="380px"></p> 
 
-
+**Registrar una aplicacion**
 <p align="left"><img src="./images/registrar_app.png" height="380px"></p> 
 
-azure_client_id
+Aqui sale nuestro valor "azure_client_id"
 
 <p align="left"><img src="./images/azure_client_id.png" height="380px"></p> 
 
-3. Crear el Secret: AZURE_CLIENT_SECRET
+### 3. Crear el Secret: AZURE_CLIENT_SECRET
 
 <p align="left"><img src="./images/certificados_secretos.png" height="380px"></p> 
 
