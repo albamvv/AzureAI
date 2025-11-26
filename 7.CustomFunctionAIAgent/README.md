@@ -215,33 +215,17 @@ project-agent-resource (Tipo: Fundición de IA)
 - Clic en + Agregar
 - Clic en Agregar asignación de rol
 - Buscar el rol:
-- - Azure AI Developer (recomendado)
-- - Cognitive Services Contributor
+   - Azure AI Developer (recomendado)
+   - Cognitive Services Contributor
 
 - Seleccionar “Usuario, grupo o entidad de servicio”
 
 <p align="left"><img src="./images/asignar_acceso.png" height="380px"></p> 
 
-- Buscar tu App Registration:
+- Buscar tu App Registration: agents-client-app
 <p align="left"><img src="./images/miembros.png" height="380px"></p> 
 
-👉 agents-client-app
 
 - Seleccionarlo y guardar
 
 
----------------------- otra cosa
-
-Para que tu aplicación pueda usar Azure OpenAI o Azure AI Agents:
-
-🔗 Subscriptions → IAM
-https://portal.azure.com/#view/Microsoft_Azure_Subscriptions/SubscriptionMenuBlade/~/AccessControl
-
-O si quieres asignar rol directamente sobre el recurso AI:
-
-🔗 Azure OpenAI / Azure AI Project → Access Control (IAM)
-https://portal.azure.com/#view/Microsoft_Azure_AD/WebResourcesBlade/resourceMenuId/iam
-
-- Roles relevantes:
-- - Cognitive Services User
-- - Azure AI Developer (si usas Agents)
