@@ -134,13 +134,15 @@ cat ticket-<ticket_num>.txt
   **✔️ `ClientSecretCredential`**  
   Recomendado para entornos de **CI/CD**, servicios backend o despliegues automatizados.
 
+## Ejecutar sin AZ LOGIN
 
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 
 <p align="left"><img src="./images/technical_problem.png" height="380px"></p> 
 
 
-2. Crear la App Registration
+
+### 2. Crear la App Registration
 Microsoft Entra ID → Registros de aplicaciones → Nuevo registro
 
 <p align="left"><img src="./images/crear_app.png" height="380px"></p> 
