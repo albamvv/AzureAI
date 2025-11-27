@@ -170,7 +170,8 @@ This is where your **azure_client_id** appears:
 
 1. Vamos a registro de aplicaciones
 
-<img src="./images/registro_apps.png" height="300px">
+<p align="left"><img src="./images/registro_apps.png" height="380px"></p> 
+
 
 2. Vamos a todas las aplicaciones
 
