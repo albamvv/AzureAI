@@ -175,11 +175,12 @@ This is where your **azure_client_id** appears:
 
 2. Vamos a todas las aplicaciones
 
-<img src="./images/registro_apps.png" height="300px">
+<img src="./images/todas_apps.png" height="200px">
+
+
 
 > New client secret → Add → Copy the value
 
-<img src="./images/todas_apps.png" height="300px">
 
 - **Value** is the real secret key Azure AD uses to generate tokens.  
 - **Secret ID** only identifies the secret inside Azure; it is *not* used for authentication.
