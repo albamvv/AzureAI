@@ -152,13 +152,13 @@ Microsoft Entra ID → App registrations → New registration
 
 <img src="./images/crear_app.png" height="300px">
 
-**Register an application**
+**Register an application** named agents-client-app
 
 <img src="./images/registrar_app.png" height="300px">
 
 This is where your **azure_client_id** appears:
 
-<img src="./images/azure_client_id.png" height="300px">
+<img src="./images/azure_client_id.png" height="270px">
 
 - Once created:
   - The *Application (client) ID* appears at the top.
@@ -168,11 +168,17 @@ This is where your **azure_client_id** appears:
 
 ### 3. Create the Secret: AZURE_CLIENT_SECRET
 
-https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Credentials
+1. Vamos a registro de aplicaciones
+
+<img src="./images/registro_apps.png" height="300px">
+
+2. Vamos a todas las aplicaciones
+
+<img src="./images/registro_apps.png" height="300px">
 
 > New client secret → Add → Copy the value
 
-<img src="./images/certificados_secretos.png" height="300px">
+<img src="./images/todas_apps.png" height="300px">
 
 - **Value** is the real secret key Azure AD uses to generate tokens.  
 - **Secret ID** only identifies the secret inside Azure; it is *not* used for authentication.
