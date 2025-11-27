@@ -179,15 +179,16 @@ This is where your **azure_client_id** appears:
 
 
 
-3. New client secret → Add → Copy the value
+3. Añadir nuevo cliente
 
+>New client secret → Add → Copy the value
 
 - **Value** is the real secret key Azure AD uses to generate tokens.  
 - **Secret ID** only identifies the secret inside Azure; it is *not* used for authentication.
 
 <img src="./images/valor.png" height="300px">
 
----
+
 
 ### 4. Assign Permissions (IAM Role) to the App Registration
 
@@ -195,13 +196,11 @@ This is where your **azure_client_id** appears:
 
 <img src="./images/recursos.png" height="300px">
 
----
 
 ### Resource Structure in Azure AI Foundry
 
 You have two main resources:
 
----
 
 #### 1️⃣ `project-agent-resource`
 - **Type:** AI Foundry (Azure AI Services)
