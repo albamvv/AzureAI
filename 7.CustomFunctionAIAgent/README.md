@@ -26,9 +26,9 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
 5. If prompted, deploy a **gpt-4o** model using either the Global Standard or Standard deployment option (depending on your quota availability).
 
 <div style="display: flex; gap: 10px;">
-  <img src="./images/deploy_model.png" height="200px">
-  <img src="./images/deploy_model2.png" height="200px">
-  <img src="./images/deploy_model3.png" height="200px">
+  <img src="./images/deploy_model.png" height="250px">
+  <img src="./images/deploy_model2.png" height="250px">
+  <img src="./images/deploy_model3.png" height="250px">
 </div>
 
 
