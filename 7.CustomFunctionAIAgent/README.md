@@ -170,16 +170,16 @@ This is where your **azure_client_id** appears:
 
 1. Vamos a registro de aplicaciones
 
-<p align="left"><img src="./images/registro_apps.png" height="320px"></p> 
+<p align="left"><img src="./images/registro_apps.png" height="250px"></p> 
 
 
 2. Vamos a todas las aplicaciones
 
-<img src="./images/todas_apps.png" height="280px">
+<img src="./images/todas_apps.png" height="350px">
 
 
 
-> New client secret → Add → Copy the value
+3. New client secret → Add → Copy the value
 
 
 - **Value** is the real secret key Azure AD uses to generate tokens.  
