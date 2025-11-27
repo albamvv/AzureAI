@@ -26,16 +26,19 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
 5. If prompted, deploy a **gpt-4o** model using either the Global Standard or Standard deployment option (depending on your quota availability).
 
 <div style="display: flex; gap: 10px;">
-  <img src="./images/deploy_model.png" height="250px">
-  <img src="./images/deploy_model2.png" height="250px">
-  <img src="./images/deploy_model3.png" height="250px">
+  <img src="./images/deploy_model.png" height="280px">
+  <img src="./images/deploy_model2.png" height="280px">
+  <img src="./images/deploy_model3.png" height="350px">
 </div>
 
 
 6. When your project is created, the Agents playground will be opened.
 
-<p align="left"><img src="./images/agents_playground.png" height="380px"></p> 
-<p align="left"><img src="./images/agents_playground2.png" height="380px"></p> 
+<div style="display: flex; gap: 10px;">
+  <img src="./images/agents_playground.png" height="280px">
+  <img src="./images/agents_playground.png" height="280px">
+</div>
+
 
 7. In the navigation pane on the left, select Overview to see the main page for your project; which looks like this:
 
