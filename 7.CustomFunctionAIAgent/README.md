@@ -42,7 +42,7 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
 
 7. In the navigation pane on the left, select Overview to see the main page for your project; which looks like this:
 
-<p align="left"><img src="./images/overview.png" height="380px"></p> 
+<p align="left"><img src="./images/overview.png" height="280px"></p> 
 
 8. Copy the Azure AI Foundry project endpoint values to a notepad, as you'll use them to connect to your project in a client application
 
@@ -77,24 +77,24 @@ code .env
 
 <p align="left"><img src="./images/env.png" height="380px"></p> 
 
-### Define a custom function
+3. Define a custom function
 
-1. Enter the following command to edit the code file that has been provided for your function code:
+Enter the following command to edit the code file that has been provided for your function code:
 
 ```bash
 code user_functions.py
 ```
 ### Write code to implement an agent that can use your function
 
-1. Review the code, using the comments to understand how it:
+- Review the code, using the comments to understand how it:
 
-- Adds your set of custom functions to a toolset
-- Creates an agent that uses the toolset.
-- Runs a thread with a prompt message from the user.
-- Checks the status of the run in case there's a failure
-- Retrieves the messages from the completed thread and displays the last one sent by the agent.
-- Displays the conversation history
-- Deletes the agent and thread when they're no longer required.
+  - Adds your set of custom functions to a toolset
+  - Creates an agent that uses the toolset.
+  - Runs a thread with a prompt message from the user.
+  - Checks the status of the run in case there's a failure
+  - Retrieves the messages from the completed thread and displays the last one sent by the agent.
+  - Displays the conversation history
+  - Deletes the agent and thread when they're no longer required.
 
 ### Sign into Azure and run the app
 
@@ -138,98 +138,112 @@ cat ticket-<ticket_num>.txt
   **✔️ `ClientSecretCredential`**  
   Recomendado para entornos de **CI/CD**, servicios backend o despliegues automatizados.
 
-## Ejecutar sin AZ LOGIN
+## Run Without AZ LOGIN
 
-### 1. Microsoft Entra ID (antes Azure AD)
+### 1. Microsoft Entra ID (formerly Azure AD)
 
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
 
+---
 
-### 2. Crear la App Registration
-Microsoft Entra ID → Registros de aplicaciones → Nuevo registro
+### 2. Create the App Registration
 
-<p align="left"><img src="./images/crear_app.png" height="380px"></p> 
+Microsoft Entra ID → App registrations → New registration
 
-**Registrar una aplicacion**
-<p align="left"><img src="./images/registrar_app.png" height="380px"></p> 
+<img src="./images/crear_app.png" height="300px">
 
-Aqui sale nuestro valor "azure_client_id"
+**Register an application**
 
-<p align="left"><img src="./images/azure_client_id.png" height="380px"></p>
+<img src="./images/registrar_app.png" height="300px">
 
-- Una vez creada:
-- - El Application (client) ID aparece arriba.
-- - El Directory (tenant) ID aparece también aquí (mismo que antes).
+This is where your **azure_client_id** appears:
 
-### 3. Crear el Secret: AZURE_CLIENT_SECRET
+<img src="./images/azure_client_id.png" height="300px">
+
+- Once created:
+  - The *Application (client) ID* appears at the top.
+  - The *Directory (tenant) ID* is also visible here (same as before).
+
+---
+
+### 3. Create the Secret: AZURE_CLIENT_SECRET
 
 https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Credentials
 
->New client secret → Add → Copia el valor
+> New client secret → Add → Copy the value
 
-<p align="left"><img src="./images/certificados_secretos.png" height="380px"></p> 
+<img src="./images/certificados_secretos.png" height="300px">
 
-- El Valor es la clave secreta real que Azure AD usa para generar tokens.
-- El Id. de secreto solo identifica el secreto dentro de Azure; no sirve para autenticación.
-<p align="left"><img src="./images/valor.png" height="380px"></p> 
+- **Value** is the real secret key Azure AD uses to generate tokens.  
+- **Secret ID** only identifies the secret inside Azure; it is *not* used for authentication.
 
-### 4. Asignar permisos (rol IAM) a la App Registration
+<img src="./images/valor.png" height="300px">
 
-1. Abrir los recursos
-<p align="left"><img src="./images/recursos.png" height="380px"></p> 
+---
 
-#### Identificación de recursos en Azure AI Foundry
+### 4. Assign Permissions (IAM Role) to the App Registration
 
-2. Tienes dos recursos principales:
+#### 1. Open the resources
 
- 1️⃣ `project-agent-resource`
-- **Tipo:** Fundición de IA (Azure AI Services)  
-- **Descripción:**  
-  Este es el *recurso raíz* del Azure AI Foundry.  
-  **Aquí es donde deben asignarse los permisos.**
+<img src="./images/recursos.png" height="300px">
 
-Este recurso controla las capacidades críticas:
-- Crear Agents  
-- Ejecutar Agents  
-- Llamar a `/assistants`  
-- Crear `/runs`  
-- Crear `/threads`  
+---
 
-👉 **Este es el recurso que actualmente está bloqueando las operaciones.**
+### Resource Structure in Azure AI Foundry
 
+You have two main resources:
 
+---
 
- 2️⃣ `project_agent` (dentro de `project-agent-resource`)
-- **Tipo:** Proyecto de Azure AI  
-- **Descripción:**  
-  Este es el proyecto Foundry donde residen y se configuran los Agents, pero **no es** donde se gestionan los permisos fundamentales.
+#### 1️⃣ `project-agent-resource`
+- **Type:** AI Foundry (Azure AI Services)
+- **Description:**  
+  This is the *root resource* of Azure AI Foundry.  
+  **This is where permissions must be assigned.**
 
+This resource controls critical capabilities:
+- Creating Agents  
+- Running Agents  
+- Calling `/assistants`  
+- Creating `/runs`  
+- Creating `/threads`  
 
-📌 **Conclusión:**  
-Asigna los permisos directamente en **`project-agent-resource` (Fundición de IA)** para desbloquear todas las operaciones relacionadas con Agents y Assistants.
+👉 **This is the resource currently blocking your operations.**
 
-3. Haz clic en:
-project-agent-resource (Tipo: Fundición de IA)
-<p align="left"><img src="./images/IAM.png" height="380px"></p> 
+---
 
+#### 2️⃣ `project_agent` (inside `project-agent-resource`)
+- **Type:** Azure AI Project  
+- **Description:**  
+  This contains the specific Foundry project, but **does not control** the core IAM permissions.
 
-4. Ahora los pasos exactos
+📌 **Conclusion:**  
+Assign roles directly to **`project-agent-resource` (AI Foundry)** to unlock all Agent and Assistant operations.
 
-- Control de acceso (IAM)
-- Clic en + Agregar
-- Clic en Agregar asignación de rol
-- Buscar el rol:
-   - Azure AI Developer (recomendado)
-   - Cognitive Services Contributor
+---
 
-- Seleccionar “Usuario, grupo o entidad de servicio”
+### 2. Select the Resource
 
-<p align="left"><img src="./images/asignar_acceso.png" height="380px"></p> 
+Click on **project-agent-resource** (Type: AI Foundry)
 
-- Buscar tu App Registration: agents-client-app
-<p align="left"><img src="./images/miembros.png" height="380px"></p> 
+<img src="./images/IAM.png" height="300px">
 
+---
 
-- Seleccionarlo y guardar
+### 3. Exact Steps to Grant Access
 
+- Access control (IAM)
+- Click **+ Add**
+- Click **Add role assignment**
+- Search for the role:
+  - **Azure AI Developer** (recommended)
+  - **Cognitive Services Contributor**
+- Choose **User, group, or service principal**
 
+<img src="./images/asignar_acceso.png" height="300px">
+
+- Search for your App Registration: **agents-client-app**
+
+<img src="./images/miembros.png" height="300px">
+
+- Select it and save
