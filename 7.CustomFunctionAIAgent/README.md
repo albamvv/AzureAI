@@ -10,7 +10,7 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
 1. Open a web browser and navigate to the Azure AI Foundry portal at https://ai.azure.com.
 2. In the home page, select **Create an agent**. 
 
-<p align="left"><img src="./images/create_agent.png" height="380px"></p> 
+<p align="left"><img src="./images/create_agent.png" height="280px"></p> 
 
 3. When prompted to create a project, enter a valid name for your project and expand Advanced options.
 4. Confirm the following settings for your project:
@@ -21,15 +21,16 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
    - **Resource group:** AI-102  
    - **Region:** Select any AI Foundry recommended*
 
-<p align="left"><img src="./images/create_project.png" height="380px"></p> 
+<p align="left"><img src="./images/create_project.png" height="280px"></p> 
 
 5. If prompted, deploy a **gpt-4o** model using either the Global Standard or Standard deployment option (depending on your quota availability).
 
-<p align="left"><img src="./images/deploy_model.png" height="380px"></p> 
+<div style="display: flex; gap: 10px;">
+  <img src="./images/deploy_model.png" height="200px">
+  <img src="./images/deploy_model2.png" height="200px">
+  <img src="./images/deploy_model3.png" height="200px">
+</div>
 
-<p align="left"><img src="./images/deploy_model2.png" height="380px"></p> 
-
-<p align="left"><img src="./images/deploy_model3.png" height="380px"></p> 
 
 6. When your project is created, the Agents playground will be opened.
 
