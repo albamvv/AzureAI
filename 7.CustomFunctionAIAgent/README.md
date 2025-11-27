@@ -28,15 +28,15 @@ El agente ejecutará código Python de forma dinámica para procesar datos y res
 <div style="display: flex; gap: 10px;">
   <img src="./images/deploy_model.png" height="280px">
   <img src="./images/deploy_model2.png" height="280px">
-  <img src="./images/deploy_model3.png" height="350px">
 </div>
 
+<p align="left"><img src="./images/deploy_model3.png" height="280px"></p> 
 
 6. When your project is created, the Agents playground will be opened.
 
 <div style="display: flex; gap: 10px;">
-  <img src="./images/agents_playground.png" height="280px">
-  <img src="./images/agents_playground.png" height="280px">
+  <img src="./images/agents_playground.png" height="250px">
+  <img src="./images/agents_playground.png" height="250px">
 </div>
 
 
