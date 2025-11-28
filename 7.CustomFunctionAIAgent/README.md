@@ -140,13 +140,21 @@ cat ticket-<ticket_num>.txt
 
 ## Run Without AZ LOGIN
 
-### 1. Microsoft Entra ID (formerly Azure AD)
+### 1. Microsoft Entra ID: AZURE_TENANT_ID
 
-https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
+
+1. En el portal de Azure, ve a Microsoft Entra ID. En el menú de la izquierda selecciona: Microsoft Entra ID
+
+
+
+<img src="./images/ms_entra_id.png" height="300px">
+
+<img src="./images/id_inquilino_tenant.png" height="300px">
+
 
 ---
 
-### 2. Create the App Registration
+### 2. Create the App Registration: AZURE_CLIENT_ID
 
 Microsoft Entra ID → App registrations → New registration
 
@@ -170,12 +178,12 @@ This is where your **azure_client_id** appears:
 
 1. Vamos a registro de aplicaciones
 
-<p align="left"><img src="./images/registro_apps.png" height="250px"></p> 
+<p align="left"><img src="./images/registro_apps.png" height="25¡00px"></p> 
 
 
 2. Vamos a todas las aplicaciones
 
-<img src="./images/todas_apps.png" height="350px">
+<img src="./images/todas_apps.png" height="380px">
 
 
 
@@ -254,3 +262,15 @@ Click on **project-agent-resource** (Type: AI Foundry)
 <img src="./images/miembros.png" height="300px">
 
 - Select it and save
+
+### 4. app empresarial
+
+Portal Azure  
+ → Microsoft Entra ID  
+   → Aplicaciones empresariales  
+     → Todas las aplicaciones  
+       → + Nueva aplicación  
+         → Examinar la galería de aplicaciones de Microsoft Entra
+
+<img src="./images/app_empresarial.png" height="300px">
+
