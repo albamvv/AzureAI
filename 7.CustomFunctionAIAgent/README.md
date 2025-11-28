@@ -147,20 +147,22 @@ cat ticket-<ticket_num>.txt
 
 
 
-<img src="./images/ms_entra_id.png" height="300px">
+<img src="./images/ms_entra_id.png" height="400px">
 
 <img src="./images/id_inquilino_tenant.png" height="300px">
 
 
----
-
-### 2. Create the App Registration: AZURE_CLIENT_ID
+2. Create the App Registration: AZURE_CLIENT_ID
 
 Microsoft Entra ID → App registrations → New registration
 
 <img src="./images/crear_app.png" height="300px">
 
-**Register an application** named agents-client-app
+3. Rellena:
+
+- Name: por ejemplo bbva-ai-agents-custom-functions.
+- Supported account types: normalmente Single tenant (solo vuestro tenant).
+- Redirect URI no es necesaria para client credentials (puede quedar vacía).
 
 <img src="./images/registrar_app.png" height="300px">
 
